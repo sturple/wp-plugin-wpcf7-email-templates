@@ -1,0 +1,23 @@
+{
+    "name" : "sturple/wpcf7-email-templates",
+    "version" : "0.0.1",
+    "description" : "Integration into WordPress Contact Form 7 Email Templates Using twig and php templates.",
+    "keywords" : ['wordpress', 'twig', 'contact form 7','plugin','timber','FGMS'],
+    "homepage" : 'https://github.com/sturple/wpcf7-email-templates',
+    "license" : 'GPL-3.0',
+    "type" : "wordpress-plugin",
+    "authors" : [
+        {
+            "name" : "Shawn Turple",
+            "email" : "shawn@turple.ca",
+            "homepage" : "http://turple.ca",
+            "role" : "Developer"            
+        }
+
+    ],
+    "require": {
+        "php" : ">=5.4",        
+        "composer/installers": "~1.0"
+    }
+}
+ 
