@@ -3,10 +3,10 @@
  * Plugin Name: Contact Form 7 Email Templates (3rd Party)
  * Plugin URI: https://github.com/sturple/wpcf7-email-templates/
  * Description: This plugin adds Email Templates to Contact Form 7
- * Version: 1.0.0
+ * Version: 0.0.2
  * Author: Shawn Turple
  * Author URI: http://turple.ca
- * License: GPL2
+ * License: GPL-3.0
  */
 
 add_filter( 'wpcf7_mail_components',function($components,$form, $mail ){
@@ -17,7 +17,7 @@ add_filter( 'wpcf7_mail_components',function($components,$form, $mail ){
     if (class_exists('Timber')){
         $message = _('Twig Error %1$s Could not load %2$s template');
         $template = 'wpcf7-email-mail.twig';
-        $data = array('posted'=>$submission->get_posted_data());
+        $data = array('posted'=>$submission->get_posted_data(), 'form'=>$form_prop,'body_message'=>$body);
       
         // adding filter hook to update variables.
         $data = apply_filters('wpcf7_fg_email_data',$data);
@@ -63,7 +63,11 @@ function wpcf7_editor_panel_fg_template (){
     <p>If <strong>Timber</strong> is installed add the following templates '<strong>wpcf7-email-mail.twig</strong>' and '<strong>wpcf7-email-mail-2.twig</strong>'.</p>
     <h3>Php Template</h3>
     <p>If using <strong>PHP</strong> templates then add the following templates '<strong>includes/wpcf7/wpcf7-email-mail.php</strong>' and '<strong>includes/wpcf7/wpcf7-email-mail-2.php</strong>'</p>
+    
+    <p>Body Message for emails use <strong>{{body_message}}</strong></p>
     <?php
+    
+    
  
 }
 
