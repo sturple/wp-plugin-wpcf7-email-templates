@@ -46,6 +46,11 @@ add_filter( 'wpcf7_mail_components',function($components,$form, $mail ){
     
 },10,3);
 
+// this could be used to setting the form, but need a way of calling template maybe shortcode
+add_filter('wpcf7_contact_form_properties',function($properties){
+    $properties['form']  = do_shortcode($properties['form']);
+    return $properties;
+});
 // add new settings panel for template -- currently it is information
 add_filter('wpcf7_editor_panels',function($panels){
     $panels['fg-template-panel'] = array(
@@ -58,13 +63,17 @@ add_filter('wpcf7_editor_panels',function($panels){
 function wpcf7_editor_panel_fg_template (){
     ?>
     <h2 style="font-size: 1.5em; font-weight: bold;">Email Templates (Contact Form 7 Email Templates Plugin)</h2>
-    <em style="font-size: 1.2em;">By Enabling the Contact Form 7 Email Templates Plugin, the email message areas are disabled if templates present.</em>
+    <em style="font-size: 1.2em;">By Enabling the Contact Form 7 Email Templates Plugin, the email message areas are added to template variable body_message.</em>
     <h3>Timber (Twig) Templates</h3>
     <p>If <strong>Timber</strong> is installed add the following templates '<strong>wpcf7-email-mail.twig</strong>' and '<strong>wpcf7-email-mail-2.twig</strong>'.</p>
+    <p>Twig variables: {{body_message}} {{posted.[name-of-field]}} ie if you use [your_email] then it would show up as {{posted.your_email}}</p>
+    <p><strong>Important only use alpha numeric and underscores for post variables</strong></p>
     <h3>Php Template</h3>
     <p>If using <strong>PHP</strong> templates then add the following templates '<strong>includes/wpcf7/wpcf7-email-mail.php</strong>' and '<strong>includes/wpcf7/wpcf7-email-mail-2.php</strong>'</p>
-    
-    <p>Body Message for emails use <strong>{{body_message}}</strong></p>
+    <p><strong>Php templates not implemented</strong></p>
+    <h2>Form Fields</h2>
+    <p>Form Fields can now contain shortcodes.  This is usefull for loading in a custom template ie [custom-template template="compact-form.twig"]</p>
+   
     <?php
     
     
