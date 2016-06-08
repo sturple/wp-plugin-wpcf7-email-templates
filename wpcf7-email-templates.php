@@ -3,7 +3,7 @@
  * Plugin Name: Contact Form 7 Email Templates (3rd Party)
  * Plugin URI: https://github.com/sturple/wpcf7-email-templates/
  * Description: This plugin adds Email Templates to Contact Form 7
- * Version: 0.0.2
+ * Version: 0.0.5
  * Author: Shawn Turple
  * Author URI: http://turple.ca
  * License: GPL-3.0
