@@ -12,6 +12,7 @@
 add_filter( 'wpcf7_mail_components',function($components,$form, $mail ){
     $submission = WPCF7_Submission::get_instance();
     $form_prop = $form->get_properties();
+    $form_prop['title'] = $form->title();
     // do nothing, but will have its own template
     $body = $components['body'];
     if (class_exists('Timber')){
@@ -75,7 +76,7 @@ function wpcf7_editor_panel_fg_template (){
     <p>Form Fields can now contain shortcodes.  This is usefull for loading in a custom template ie [custom-template template="compact-form.twig"]</p>
    
     <?php
-    
+
     
  
 }
