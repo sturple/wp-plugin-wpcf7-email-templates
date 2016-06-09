@@ -3,7 +3,7 @@
  * Plugin Name: Contact Form 7 Email Templates (3rd Party)
  * Plugin URI: https://github.com/sturple/wpcf7-email-templates/
  * Description: This plugin adds Email Templates to Contact Form 7
- * Version: 0.0.5
+ * Version: 0.0.6
  * Author: Shawn Turple
  * Author URI: http://turple.ca
  * License: GPL-3.0
@@ -76,10 +76,6 @@ function wpcf7_editor_panel_fg_template (){
     <p>Form Fields can now contain shortcodes.  This is usefull for loading in a custom template ie [custom-template template="compact-form.twig"]</p>
    
     <?php
-
-    
  
 }
-
 ?>
- 
