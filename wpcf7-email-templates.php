@@ -41,8 +41,7 @@ add_filter( 'wpcf7_mail_components',function($components,$form, $mail ){
     else {
         
     }
-    $components['body'] = $body;
-    
+    $components['body'] = $body;    
     return $components;
     
 },10,3);
