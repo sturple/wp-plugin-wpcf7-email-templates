@@ -23,4 +23,9 @@ If using **PHP** templates then add the following templates '**includes/wpcf7/wp
 
 ## Form Fields
 
-Form Fields can now contain shortcodes.  This is usefull for loading in a custom template ie ``` [custom-template template="compact-form.twig"] ```
+Form Fields can now contain shortcodes.  This is usefull for loading in a custom template ie 
+
+```
+[custom-template template="form-compact.twig" class_label="sr-only" class_input="" ]
+[custom-template template="form-inquiry.twig" class_label="col-sm-3" class_input="col-sm-9"]
+```
